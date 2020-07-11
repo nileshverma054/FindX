@@ -1,0 +1,50 @@
+{% extends 'assets/base.html' %}
+
+{% block header %}
+{% include 'assets/bootstrap.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/drag-drop.css') }}" /><!-- Calendar -->
+    <link rel="script" href="{{ url_for('static', filename='js/upload.js') }}" /><!-- Calendar -->
+<style>
+    .thumb{
+        height:450px;
+        width:100%;
+        object-fit:cover;
+    }
+    .logo{
+        width:150px;
+        object-fit:cover;
+    }
+    .price{
+        text-decoration:none !important;
+        color:#000;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid my-5">
+
+    <div class="row">
+    {% for score, id in results %}
+      <div class="col-sm m-3 border rounded">
+          <a href="https://www.flipkart.com/highlander-men-checkered-casual-dark-blue-light-blue-shirt/p/itmfdfd7gpgyeyyd?pid=SHTEMTMRGE6HDQUA&lid=LSTSHTEMTMRGE6HDQUAXL3PUJ&marketplace=FLIPKART&srno=b_1_8&otracker=nmenu_sub_Men_0_Shirts&fm=organic&iid=44463f9c-f8b2-441d-929e-eefafa865df9.SHTEMTMRGE6HDQUA.SEARCH&ppt=browse&ppn=browse" target="_blank">
+            <img src="{{ url_for('dataset', filename=id) }}" class="thumb">
+
+              <div class="row">
+                <div class="col my-2">
+                    <img src="{{ url_for('static', filename='images/logos/flipkart.jpg') }}" class="logo">
+
+                </div>
+                  <div class="col my-2 my-auto d-block">
+                    <p class="price"> &#x20b9; 469</p>
+                </div>
+              </div>
+
+          </a>
+      </div>
+    {% endfor %}
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'assets/base.html' %}
+
+{% block header %}
+{% include 'assets/bootstrap.html' %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/gallery.css') }}">
+<style>
+  .logo {
+    height: 20px;
+  }
+  body{
+    background-color: #aeb0af;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<h3 class="text-center">Results</h3>
+<div class="container-fluid my-5">
+  
+  <div class="tz-gallery">
+    <div class="row">
+      {% for result in results %}
+          <div class="col-sm-3 col-md-3">
+            <div class="thumbnail">
+                <a class="lightbox" href={{result.product_link}} target="_blank">
+                    <img src={{result.link}} alt="">
+                </a>
+              <div class="caption">
+                <div class="row">
+                  <div class="col my-2">
+                      <img src="{{ url_for('static', filename=result.logo) }}" class="float-left logo">
+                  </div>
+                    <div class="col my-2">
+                      <strong class="float-right price"> &#x20b9; 499/-</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+  baguetteBox.run('.tz-gallery');
+</script>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'assets/base.html' %}
+
+{% block header %}
+{% include 'assets/bootstrap.html' %}
+<style>
+    body{
+        background-color: bisque;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="">
+    <div class="box" style="background-color: #f25427; height:400px;">
+        <img src="{{url_for('static', filename='images/logos/findx-logo.png')}}" class="Responsive image mx-auto d-block" alt="find-X" width="650">
+    </div>
+    <div class="text-center pt-5 inline-block">
+        <img src="{{url_for('static',filename='images/logos/cam.png')}}" width="100">
+        <img src="{{url_for('static',filename='images/logos/upload.png')}}" class="mx-5" width="100">
+        <img src="{{url_for('static',filename='images/logos/cloth.png')}}" width="100">
+    </div>
+    <p class="text-center mt-3">snap-it | upload-it | find-it</p>
+</div>
+
+{% endblock %}
