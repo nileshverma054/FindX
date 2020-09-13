@@ -5,7 +5,7 @@ import os
 import tqdm
 import pandas as pd
 import shutil
-import feather
+# import feather
 
 # cols = ['id','gender','subCategory','productDisplayName']
 # df = pd.read_csv('database/test_data.csv', usecols=cols)
@@ -43,7 +43,6 @@ print("done")
 # ret = data.query('gender == "Men"',inplace=False)
 # print(ret['id'][:10])
 #print(len(ret),"\n",ret)
-
 #============
 
 # cols = ['gender','subCategory','productDisplayName']

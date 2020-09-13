@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 # DB_dir = 'database'
-DB_csv = 'database/data-small.csv'
+DB_csv = 'database/test_data.csv'
 
 
 class Database(object):

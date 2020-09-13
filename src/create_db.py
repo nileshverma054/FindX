@@ -12,6 +12,15 @@ import imageio
 import os
 from DB import Database
 
+import ssl
+
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
 # configs for histogram
 RES_model  = 'resnet152'  # model type
 pick_layer = 'avg'        # extract feature of this layer
