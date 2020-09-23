@@ -17,7 +17,11 @@
 {% endblock %}
 
 {% block body %}
-<h3 class="text-center">Results</h3>
+<div class="container">
+    <h3 class="float-left text-center">Results</h3>
+    <button class="btn btn-outline-light float-right mt-4" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Developer Mode</button>
+</div>
+<hr>
 <div class="container-fluid my-5">
   
   <div class="tz-gallery">
@@ -34,9 +38,17 @@
                       <img src="{{ url_for('static', filename=result.logo) }}" class="float-left logo">
                   </div>
                     <div class="col my-2">
-                      <strong class="float-right price"> &#x20b9; 499/-</strong>
+                      <strong class="float-right price"> &#x20b9; {{result.price}}/-</strong>
                   </div>
                 </div>
+                  <div class="collapse multi-collapse" id="multiCollapseExample2">
+                      <div class="text-center" id="dev">
+                          <hr>
+                          <row>
+                              <p>{{result.dis}}</p>
+                          </row>
+                      </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -49,6 +61,5 @@
 <script>
   baguetteBox.run('.tz-gallery');
 </script>
-    
 </div>
 {% endblock %}

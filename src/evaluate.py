@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import print_function
-
 from scipy import spatial
 import numpy as np
 from DB import Database
